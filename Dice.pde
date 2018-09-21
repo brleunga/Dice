@@ -1,15 +1,23 @@
-Die practice = new Die(300,300);
-
 void setup()
 {
-	background(0);
+	background(10);
 	size(600,600);
 	noLoop();
 }
 void draw()
 {
-	practice.show();
-	practice.roll();
+	int numberOfDots = 0;
+    for(int x = 35; x < 560; x = x + 60) {
+    	for (int y = 20; y < 560; y = y + 60) {
+			Die practice = new Die(x,y);
+			practice.show();
+			practice.roll();
+			if (practice.myRoll < 7) {
+				numberOfDots = numberOfDots + practice.myRoll; 
+			}
+	    }
+	}
+	text("number of dots: " + numberOfDots,300,550);
 }
 void mousePressed()
 {
@@ -22,7 +30,7 @@ class Die //models one single dice cube
 	{
 		myX = x;
 		myY = y;
-		myRoll = 5;
+		myRoll = (int)(Math.random()*6)+1;
 	}
 	void roll()
 	{
@@ -57,12 +65,18 @@ class Die //models one single dice cube
         	ellipse(myX+40,myY+40,10,10);
         }
         if (myRoll == 6) {
-        	
+        	fill(0);
+        	ellipse(myX+10,myY+10,10,10);
+        	ellipse(myX+25,myY+10,10,10);
+        	ellipse(myX+40,myY+10,10,10);
+        	ellipse(myX+10,myY+40,10,10);
+        	ellipse(myX+25,myY+40,10,10);
+        	ellipse(myX+40,myY+40,10,10);
         }
 	}
 	void show()
 	{
-		fill(255);
+		fill(((int)(Math.random()*150)+100),((int)(Math.random()*150)+100),((int)(Math.random()*150)+100));
 		rect(myX,myY,50,50);
 	}
 }
