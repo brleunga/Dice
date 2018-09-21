@@ -6,6 +6,7 @@ void setup()
 }
 void draw()
 {
+	background(10);
 	int numberOfDots = 0;
     for(int x = 35; x < 560; x = x + 60) {
     	for (int y = 20; y < 560; y = y + 60) {
@@ -17,7 +18,9 @@ void draw()
 			}
 	    }
 	}
-	text("number of dots: " + numberOfDots,300,550);
+	fill(255);
+	textSize(20);
+	text("Number of Dots: " + numberOfDots,200,575);
 }
 void mousePressed()
 {
