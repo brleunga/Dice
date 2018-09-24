@@ -20,7 +20,8 @@ void draw()
 	}
 	fill(255);
 	textSize(20);
-	text("Number of Dots: " + numberOfDots,200,575);
+	text("Number of Dots: " + numberOfDots,50,575);
+    text("Max Dots: " + 6*81,410,575);
 }
 void mousePressed()
 {
