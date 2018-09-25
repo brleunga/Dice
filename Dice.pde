@@ -8,8 +8,8 @@ void draw()
 {
 	background(10);
 	int numberOfDots = 0;
-    for(int x = 35; x < 560; x = x + 60) {
-    	for (int y = 20; y < 560; y = y + 60) {
+    for(int y = 20; y < 560; y = y + 60) {
+    	for (int x = 35; x < 560; x = x + 60) {
 			Die practice = new Die(x,y);
 			practice.show();
 			practice.roll();
@@ -22,7 +22,7 @@ void draw()
 	textSize(20);
 	text("Number of Dots: " + numberOfDots,50,575);
     text("Max Dots: " + 6*81,410,575);
-}
+}   
 void mousePressed()
 {
 	redraw();
